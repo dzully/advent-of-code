@@ -1,6 +1,6 @@
 const { readFileSync, promises: fsPromises } = require("fs");
 
-function calorieCount(filename) {
+const calorieCount = (filename) => {
   const contents = readFileSync(filename, "utf-8");
   const dataFromFile = contents.split(/\r?\n/);
 
@@ -43,7 +43,7 @@ function calorieCount(filename) {
   console.log({
     "Sum of top three calories:": calculateTopThree,
   });
-}
+};
 
 let fileName = "./input.txt";
 calorieCount(fileName);

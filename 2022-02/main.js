@@ -1,6 +1,6 @@
 const { readFileSync, promises: fsPromises } = require("fs");
 
-function partOne(filename) {
+const partOne = (filename) => {
   const contents = readFileSync(filename, "utf-8");
   const dataFromFile = contents.split(/\r?\n/);
 
@@ -26,9 +26,9 @@ function partOne(filename) {
   }
 
   console.log({ "Part One:": totalScore });
-}
+};
 
-function partTwo(filename) {
+const partTwo = (filename) => {
   const contents = readFileSync(filename, "utf-8");
   const dataFromFile = contents.split(/\r?\n/);
 
@@ -54,7 +54,7 @@ function partTwo(filename) {
   }
 
   console.log({ "Part Two:": totalScore });
-}
+};
 
 let fileName = "./input.txt";
 partOne(fileName);
