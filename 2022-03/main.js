@@ -77,6 +77,6 @@ const partTwo = (filename) => {
   console.log({ "Part Two:": totalScore });
 };
 
-let fileName = "./input.txt";
+const fileName = "./input.txt";
 partOne(fileName);
 partTwo(fileName);

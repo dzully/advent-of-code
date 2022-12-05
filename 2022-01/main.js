@@ -45,5 +45,5 @@ const calorieCount = (filename) => {
   });
 };
 
-let fileName = "./input.txt";
+const fileName = "./input.txt";
 calorieCount(fileName);
