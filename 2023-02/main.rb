@@ -41,7 +41,7 @@ end
 
 # Main method
 def main
-  part1, part2 = process_game_data('part_1.txt')
+  part1, part2 = process_game_data('input.txt')
   puts "#{part1}, #{part2}"
 end
 
