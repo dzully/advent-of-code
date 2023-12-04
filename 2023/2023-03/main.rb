@@ -41,30 +41,30 @@ def process_file(file)
   row_length = grid.length
   col_length = grid[0].length
 
-  p1 = 0
+  part1 = 0
   nums = Hash.new { |h, k| h[k] = [] }
   grid.each_with_index do |row, r|
     row_nums, row_p1 = extract_gears(row, r, grid, row_length, col_length)
     nums.merge!(row_nums) { |_, old_val, new_val| old_val + new_val }
-    p1 += row_p1
+    part1 += row_p1
   end
 
-  p2 = 0
+  part2 = 0
   nums.each do |_, v|
-    p2 += v[0] * v[1] if v.length == 2
+    part2 += v[0] * v[1] if v.length == 2
   end
 
-  [p1, p2]
+  [part1, part2]
 end
 
 # Main method
 def main
   start_time = Time.now
-  p1, p2 = process_file('input.txt')
+  part1, part2 = process_file('input.txt')
   end_time = Time.now
   
   puts "Execution time: #{end_time - start_time} seconds"
-  puts "#{p1}, #{p2}"
+  puts "#{part1}, #{part2}"
 end
 
 main if __FILE__ == $PROGRAM_NAME
