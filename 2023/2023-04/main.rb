@@ -1,5 +1,6 @@
 require 'set'
 
+# converts them into sets, and returns the intersection of the two sets.
 def process_line(line)
   _, l = line.split(":")
   winning, have = l.split("|").map(&:strip)
@@ -10,6 +11,7 @@ def process_line(line)
   winning_set & have_set
 end
 
+# Calculates the total and sum of cards based on the given lines.
 def calculate_total_and_cards(lines)
   total = 0
   cards = Array.new(lines.size, 1)
@@ -28,6 +30,7 @@ def calculate_total_and_cards(lines)
   [total, cards.sum]
 end
 
+# Main method
 def main
   start_time = Time.now
   lines = File.readlines('input.txt').map(&:strip)
