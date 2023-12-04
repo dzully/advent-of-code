@@ -41,7 +41,11 @@ end
 
 # Main method
 def main
+  start_time = Time.now
   part1, part2 = process_game_data('input.txt')
+  end_time = Time.now
+  
+  puts "Execution time: #{end_time - start_time} seconds"
   puts "#{part1}, #{part2}"
 end
 

@@ -67,9 +67,12 @@ end
 
 # Main method
 def main
+  start_time = Time.now
   part1, _ = process_file('part_1.txt')
   _, part2 = process_file('part_2.txt')
-
+  end_time = Time.now
+  
+  puts "Execution time: #{end_time - start_time} seconds"
   puts "#{part1}, #{part2}"
 end
 

@@ -59,7 +59,11 @@ end
 
 # Main method
 def main
+  start_time = Time.now
   p1, p2 = process_file('input.txt')
+  end_time = Time.now
+  
+  puts "Execution time: #{end_time - start_time} seconds"
   puts "#{p1}, #{p2}"
 end
 
