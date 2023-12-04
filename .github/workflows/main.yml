@@ -1,4 +1,4 @@
-name: Python application test with Github Actions
+name: Ruby application test with Github Actions
 
 on:
   push:
@@ -10,14 +10,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          python-version: 3.8
+          ruby-version: 3.0
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          gem install bundler
+          bundle install
       - name: Run tests
         run: |
-          python test_main.py
+          find . -name test_main.rb -exec ruby {} \;
